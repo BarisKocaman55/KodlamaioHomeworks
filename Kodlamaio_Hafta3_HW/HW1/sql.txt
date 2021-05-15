@@ -1,0 +1,61 @@
+CREATE TABLE Users(
+	id int primary key GENERATED ALWAYS AS IDENTITY,
+	password VARCHAR(20) NOT NULL,
+	password_again VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Employee_Verification(
+	id int primary key GENERATED ALWAYS AS IDENTITY,
+	verification_code VARCHAR NOT NULL,
+	verification_status boolean NOT NULL
+);
+
+CREATE TABLE Employee(
+	id int primary key GENERATED ALWAYS AS IDENTITY,
+	employee_id int NOT NULL,
+	firstName VARCHAR(20) NOT NULL,
+	lastName VARCHAR(20) NOT NULL,
+	national_id VARCHAR(11) UNIQUE NOT NULL,
+	birth_year DATE NOT NULL,
+	email VARCHAR UNIQUE NOT NULL,
+	verification_id int NOT NULL,
+	
+	CONSTRAINT fk_users FOREIGN KEY(employee_id) REFERENCES Users(id),
+	CONSTRAINT fk_employee_verification FOREIGN KEY(verification_id) REFERENCES Employee_Verification(id)
+);
+
+CREATE TABLE Employer_Verification(
+	id int primary key GENERATED ALWAYS AS IDENTITY,
+	verification_code VARCHAR NOT NULL,
+	verification_status boolean NOT NULL
+);
+
+CREATE TABLE Employer(
+	id int primary key GENERATED ALWAYS AS IDENTITY,
+	employer_id int NOT NULL,
+	company_name VARCHAR NOT NULL,
+	company_website VARCHAR NOT NULL,
+	company_phone VARCHAR NOT NULL,
+	email VARCHAR UNIQUE NOT NULL,
+	verification_id int NOT NULL,
+	
+	CONSTRAINT fk_users FOREIGN KEY(employer_id) REFERENCES Users(id),
+	CONSTRAINT fk_employer_verification FOREIGN KEY(verification_id) REFERENCES Employer_Verification(id)
+);
+
+
+CREATE TABLE System_personal(
+	id int primary key GENERATED ALWAYS AS IDENTITY,
+	personal_id int NOT NULL,
+	national_id VARCHAR(11) UNIQUE NOT NULL,
+	
+	CONSTRAINT fk_users FOREIGN KEY(personal_id) REFERENCES Users(id)
+);
+
+CREATE TABLE Jobs(
+	id int primary key GENERATED ALWAYS AS IDENTITY,
+	job_title VARCHAR NOT NULL
+);
+
+
+
