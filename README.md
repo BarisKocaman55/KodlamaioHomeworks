@@ -1,7 +1,11 @@
 # KodlamaioHomeworks
 ## DataBase Design
 
+<<<<<<< HEAD
 **
+=======
+## DataBase Codes
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 
 Create Table City(
 	id integer NOT NULL GENERATED ALWAYS AS IDENTITY (start with 1 increment by 1),
@@ -11,6 +15,10 @@ Create Table City(
 );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 Create Table Users (
  	id integer Not NUll GENERATED ALWAYS AS IDENTITY (start with 1 increment by 1),
 	email VARCHAR(25) NOT NULL,
@@ -20,6 +28,10 @@ Create Table Users (
 );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 Create Table Employer_Verification(
 	id integer Not NUll GENERATED ALWAYS AS IDENTITY (start with 1 increment by 1),
 	verification_code varchar(5) Not NULL,
@@ -28,6 +40,10 @@ Create Table Employer_Verification(
 );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 Create Table Employee_Verification(
 	id integer Not NUll GENERATED ALWAYS AS IDENTITY (start with 1 increment by 1),
 	verification_code varchar(5) Not NULL,
@@ -36,6 +52,10 @@ Create Table Employee_Verification(
 );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 Create Table System_personal(
 	id integer Not NUll GENERATED ALWAYS AS IDENTITY (start with 1 increment by 1),
 	personal_id integer NOT NULL,
@@ -45,6 +65,10 @@ Create Table System_personal(
 );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 Create Table Job(
 	id integer Not NUll GENERATED ALWAYS AS IDENTITY (start with 1 increment by 1),
 	job_title Varchar(20) NOT NULL,
@@ -52,6 +76,10 @@ Create Table Job(
 );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 Create Table Employer(
 	id integer Not NUll GENERATED ALWAYS AS IDENTITY (start with 1 increment by 1),
 	employer_id VARCHAR(20) NOT NULL,
@@ -67,6 +95,10 @@ Create Table Employer(
 );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 Create Table Employee(
 	id integer Not NUll GENERATED ALWAYS AS IDENTITY (start with 1 increment by 1),
 	employee_id Varchar(20) Not NULL,
@@ -136,6 +168,10 @@ Create Table cv_file(
 );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 Create View myView As
 	select workStartDate, workFinishDate, workFinishDate - workStartDate as experience
 	From CvFile;
@@ -144,63 +180,88 @@ Create View myView As
 INSERT INTO public.candidate(
 	first_name, last_name, email, password, password_again)
 	VALUES ('Baris', 'Kocaman', 'baris@gmail.com', '12345', '12345');
+<<<<<<< HEAD
     
+=======
+	
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 	
 INSERT INTO public.cv_file(
 	candidate_id, university, department, education_start_date, education_finish_date, graduate_status, company_name, position_name, work_start_date, work_finish_date, experience, languages, language_status, github, linkedln, cover_letter)
 	VALUES (1, 'Baskent', 'CE', 2017, 2021, True, 'dasa', 'Engineer', 2020, 2021, 1, 'Eng', 4, 'git', 'link', 'dasdas');
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 
 INSERT INTO public.cv_file(
 	cv_ref, university, department, education_start_date, education_finish_date, graduate_status, company_name, position_name, work_start_date, work_finish_date, experience, languages, language_status, github, linkedln, cover_letter, candidate_id)
 	VALUES (1, 'Odtu', 'CE', 2017, 2021, True, 'dasdas', 'Engineer', '2020', 2020, 1, 'Germany', 2, 'dasdsa', 'dsadas', 'dsadsaddsadasdsadas', 1);
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 
 INSERT INTO public.city(name, code) VALUES ('Samsun', '55');
 INSERT INTO public.city(name, code) VALUES ('İstanbul', '34');
 INSERT INTO public.city(name, code) VALUES ('Ankara', '06');
 
 
+
 INSERT INTO public.employer_verification(
 	verification_code, verification_status)
 	VALUES ('1', True);
-	
+
+
 INSERT INTO public.employer_verification(
 	verification_code, verification_status)
 	VALUES ('2', False);
-	
+
+
 INSERT INTO public.job(
 	job_title)
 	VALUES ('Java Developer');
+
 
 INSERT INTO public.job(
 	job_title)
 	VALUES ('.Net Developer');
 
+
 INSERT INTO public.job(
 	job_title)
 	VALUES ('ML Developer');
 
+
 INSERT INTO public.employer(
 	employer_id, company_name, company_website, company_phone, email, verification_id, password, password_again)
 	VALUES (1, 'Kocaman', 'kocaman.com', '0535167567', 'kocaman@gmail.com', 2, '123', '123');
+	
 	
 INSERT INTO public.employer(
 	employer_id, company_name, company_website, company_phone, email, verification_id, password, password_again)
 	VALUES (2, 'Kocamanlar', 'kocamanlarr.com', '0531234756', 'kocamanlar@gmail.com', 1, '12345', '12345');
 	
 	
-INSERT INTO public.jobposting(
-	jobdescription, minsallary, maxsallary, availablepos, publishdate, isactive, cityid, employerid, jobid)
-	VALUES ('denemeler', 6500, 8500, 6, '2021-02-07', True, 2, 1, 2);
 	
 INSERT INTO public.jobposting(
 	jobdescription, minsallary, maxsallary, availablepos, publishdate, isactive, cityid, employerid, jobid)
+	VALUES ('denemeler', 6500, 8500, 6, '2021-02-07', True, 2, 1, 2);
+
+
+INSERT INTO public.jobposting(
+	jobdescription, minsallary, maxsallary, availablepos, publishdate, isactive, cityid, employerid, jobid)
 	VALUES ('talent', 5000, 9500, 10, '2021-06-12', True, 2, 1, 2);
+	
 	
 INSERT INTO public.jobposting(
 	jobdescription, minsallary, maxsallary, availablepos, publishdate, isactive, cityid, employerid, jobid)
 	VALUES ('vovv', 6900, 8500, 6, '2021-12-15', False, 1, 2, 1);
 
+<<<<<<< HEAD
 **
+=======
+>>>>>>> cdce511683ffa4318aa244783d39bbd9ef9a384f
 
