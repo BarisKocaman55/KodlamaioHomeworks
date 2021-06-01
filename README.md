@@ -1,7 +1,7 @@
 # KodlamaioHomeworks
 ## DataBase Design
 
-![] (DataBaseDesign.PNG)
+![] (/DataBaseDesign.PNG)
 
 ## DataBase Codes
 
